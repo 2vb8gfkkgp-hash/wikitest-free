@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wikipedia</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://en.wikipedia.org/w/load.php?lang=en&modules=site.styles&only=styles"
+    />
+    <link
+      rel="stylesheet"
+      href="https://en.wikipedia.org/w/load.php?lang=en&modules=skins.vector.styles&only=styles"
+    />
+  </head>
+  <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Main_Page">
+    <div class="mw-page-container">
+      <header class="mw-header">
+        <div class="mw-logo">
+          <a class="mw-logo-link" href="https://en.wikipedia.org/wiki/Main_Page">
+            <img
+              class="mw-logo-icon"
+              alt="Wikipedia"
+              src="https://en.wikipedia.org/static/images/icons/wikipedia.png"
+            />
+            <img
+              class="mw-logo-wordmark"
+              alt="Wikipedia"
+              src="https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg"
+            />
+            <img
+              class="mw-logo-tagline"
+              alt="The Free Encyclopedia"
+              src="https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-tagline-en.svg"
+            />
+          </a>
+        </div>
+        <form id="search-form" class="vector-search-box">
+          <label class="cdx-text-input cdx-text-input--has-start-icon">
+            <span class="cdx-text-input__icon cdx-text-input__start-icon"></span>
+            <input
+              id="query"
+              class="cdx-text-input__input"
+              name="query"
+              type="search"
+              placeholder="Search Wikipedia"
+              autocomplete="off"
+              required
+            />
+          </label>
+          <button class="cdx-button cdx-button--action-default" type="submit">
+            Search
+          </button>
+        </form>
+      </header>
+
+      <main class="mw-body" role="main">
+        <div class="mw-body-content">
+          <div class="mock-disclaimer">
+            This is a staged, consent-based mock of Wikipedia for a live demonstration.
+          </div>
+          <div id="results" class="wiki-results empty">
+            <p>Search results will appear here.</p>
+          </div>
+          <article id="article" class="wiki-article"></article>
+        </div>
+      </main>
+    </div>
+
+    <script src="/session.js" type="module"></script>
+  </body>
+</html>
