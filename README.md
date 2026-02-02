@@ -1,10 +1,11 @@
 # wikitest-free
 
-Consent-based Wikipedia-style search demo for stage mentalism. This project logs audience search
-queries (with explicit permission) and lets the performer see them live.
+Consent-based Wikipedia-style search demo for stage mentalism. This project generates temporary
+audience links that display a Wikipedia-style mock page; audience searches are logged (with explicit
+permission) so the performer can see them live.
 
 ## Features
-- Audience search page that looks and feels like a mini Wikipedia viewer.
+- Temporary audience links that open a Wikipedia-style mock page.
 - Performer dashboard with a live feed of search terms.
 - Optional push notifications via [ntfy.sh](https://ntfy.sh/) so you can receive alerts on phone,
   Apple Watch (via iOS notifications), or laptop.
@@ -17,8 +18,11 @@ npm start
 ```
 
 Visit:
-- `http://localhost:3000/` for the audience view.
-- `http://localhost:3000/performer.html` for the performer dashboard.
+- `http://localhost:3000/` to create a temporary audience link.
+- `http://localhost:3000/performer.html` for the performer dashboard and live feed.
+
+Share the generated link with a participant. The mock Wikipedia page posts searches back to the
+performer feed.
 
 ## Optional push notifications
 

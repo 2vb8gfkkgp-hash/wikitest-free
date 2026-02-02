@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wikipedia</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="wiki-body">
+    <header class="wiki-header">
+      <div class="wiki-logo">
+        <div class="wiki-globe">W</div>
+        <div>
+          <h1>Wikipedia</h1>
+          <p>The Free Encyclopedia</p>
+        </div>
+      </div>
+      <form id="search-form" class="wiki-search">
+        <input
+          id="query"
+          name="query"
+          type="search"
+          placeholder="Search Wikipedia"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <main class="wiki-main">
+      <aside class="wiki-sidebar">
+        <h2>Navigation</h2>
+        <ul>
+          <li>Main page</li>
+          <li>Contents</li>
+          <li>Random article</li>
+          <li>About Wikipedia</li>
+        </ul>
+      </aside>
+
+      <section class="wiki-content">
+        <div class="wiki-notice">
+          This is a staged, consent-based mock of Wikipedia for a live demonstration.
+        </div>
+        <div id="results" class="wiki-results empty">
+          <p>Search results will appear here.</p>
+        </div>
+        <article id="article" class="wiki-article"></article>
+      </section>
+    </main>
+
+    <script src="/session.js" type="module"></script>
+  </body>
+</html>

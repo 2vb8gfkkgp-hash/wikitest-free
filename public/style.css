@@ -41,6 +41,31 @@ nav a {
   font-weight: 600;
 }
 
+.session-output {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.session-link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.session-link input {
+  width: 100%;
+}
+
+.steps {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+  color: #374151;
+  display: grid;
+  gap: 0.5rem;
+}
+
 .layout {
   flex: 1;
   display: grid;
@@ -148,10 +173,146 @@ footer {
   color: #6b7280;
 }
 
+.wiki-body {
+  background: #f6f6f6;
+  color: #202122;
+  font-family: "Linux Libertine", "Georgia", serif;
+}
+
+.wiki-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: white;
+  border-bottom: 1px solid #a2a9b1;
+}
+
+.wiki-logo {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.wiki-globe {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #202122;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.wiki-logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.wiki-logo p {
+  margin: 0;
+  color: #54595d;
+  font-size: 0.9rem;
+}
+
+.wiki-search {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.wiki-search input {
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  padding: 0.5rem 0.75rem;
+  width: 260px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.wiki-search button {
+  border-radius: 2px;
+  background: #3366cc;
+}
+
+.wiki-main {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.wiki-sidebar {
+  background: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  padding: 1rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+.wiki-sidebar h2 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.wiki-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.wiki-content {
+  background: white;
+  border: 1px solid #a2a9b1;
+  padding: 1.5rem;
+  font-family: "Linux Libertine", "Georgia", serif;
+}
+
+.wiki-notice {
+  background: #eaecf0;
+  padding: 0.5rem 0.75rem;
+  border-left: 4px solid #3366cc;
+  margin-bottom: 1rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.wiki-results.empty {
+  color: #54595d;
+}
+
+.wiki-result-item {
+  border-top: 1px solid #eaecf0;
+  padding: 0.75rem 0;
+}
+
+.wiki-result-item h3 {
+  margin: 0 0 0.25rem;
+  color: #0645ad;
+}
+
+.wiki-result-item button {
+  margin-top: 0.5rem;
+  background: #36c;
+  border-radius: 2px;
+}
+
+.wiki-article {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eaecf0;
+}
+
 @media (max-width: 640px) {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .wiki-main {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,15 +1,19 @@
 import express from "express";
 import { randomUUID } from "crypto";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 const port = process.env.PORT || 3000;
 const ntfyTopic = process.env.NTFY_TOPIC || "";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(express.json({ limit: "32kb" }));
 app.use(express.static("public"));
 
 const events = [];
 const subscribers = new Set();
+const sessions = new Map();
 
 const pushEvent = (event) => {
   events.push(event);
@@ -42,7 +46,30 @@ const sendNotification = async (event) => {
 };
 
 app.get("/api/health", (_req, res) => {
-  res.json({ ok: true, notificationsEnabled: Boolean(ntfyTopic) });
+  res.json({
+    ok: true,
+    notificationsEnabled: Boolean(ntfyTopic),
+    activeSessions: sessions.size
+  });
+});
+
+app.post("/api/session", (_req, res) => {
+  const sessionId = randomUUID();
+  const createdAt = new Date().toISOString();
+  sessions.set(sessionId, { createdAt });
+  res.json({
+    sessionId,
+    url: `/session/${sessionId}`
+  });
+});
+
+app.get("/session/:sessionId", (req, res) => {
+  const { sessionId } = req.params;
+  if (!sessions.has(sessionId)) {
+    res.status(404).send("Session not found.");
+    return;
+  }
+  res.sendFile(path.join(__dirname, "public", "session.html"));
 });
 
 app.get("/api/events", (req, res) => {
@@ -65,6 +92,10 @@ app.post("/api/search", async (req, res) => {
   const { query, sessionId, label } = req.body || {};
   if (!query || !sessionId) {
     res.status(400).json({ error: "query and sessionId required" });
+    return;
+  }
+  if (!sessions.has(sessionId)) {
+    res.status(404).json({ error: "session not found" });
     return;
   }
 

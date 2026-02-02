@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wikitest — Audience View</title>
+    <title>Wikitest — Session Launcher</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <header class="site-header">
       <div>
         <h1>Wikitest</h1>
-        <p class="tagline">A consent-based Wikipedia-style search demo for stage mentalism.</p>
+        <p class="tagline">Create a temporary audience link that mirrors Wikipedia.</p>
       </div>
       <nav>
         <a href="/performer.html">Performer Dashboard</a>
@@ -19,30 +19,29 @@
 
     <main class="layout">
       <section class="card">
-        <h2>Audience Search</h2>
+        <h2>Launch a Session</h2>
         <p>
-          This demo logs your search query so the performer can receive it. Only use with explicit
-          permission from participants.
+          Generate a temporary link that opens a Wikipedia-style mock page. Use it only with
+          explicit consent.
         </p>
-        <form id="search-form" class="search-form">
-          <label>
-            Search Wikipedia-style
-            <input id="query" name="query" type="search" placeholder="Try: Aurora Borealis" required />
-          </label>
-          <label>
-            Optional nickname
-            <input id="label" name="label" type="text" placeholder="Seat A / volunteer name" />
-          </label>
-          <button type="submit">Search</button>
-        </form>
+        <button id="create-session" type="button">Create temporary link</button>
+        <div class="session-output" id="session-output" hidden>
+          <p>Your temporary audience link:</p>
+          <div class="session-link">
+            <input id="session-url" type="text" readonly />
+            <button id="copy-link" type="button">Copy</button>
+          </div>
+          <small>Share this link with the audience participant.</small>
+        </div>
       </section>
 
       <section class="card">
-        <h2>Results</h2>
-        <div id="results" class="results empty">
-          <p>Search results will appear here.</p>
-        </div>
-        <article id="article" class="article"></article>
+        <h2>What happens next?</h2>
+        <ul class="steps">
+          <li>The participant opens the link and sees a Wikipedia-style page.</li>
+          <li>When they search, the performer dashboard updates instantly.</li>
+          <li>Optional notifications can be sent to your phone or laptop.</li>
+        </ul>
       </section>
     </main>
 
@@ -53,6 +52,6 @@
       </p>
     </footer>
 
-    <script src="/client.js" type="module"></script>
+    <script src="/index.js" type="module"></script>
   </body>
 </html>
