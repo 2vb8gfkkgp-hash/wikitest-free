@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wikitest — Audience View</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <h1>Wikitest</h1>
+        <p class="tagline">A consent-based Wikipedia-style search demo for stage mentalism.</p>
+      </div>
+      <nav>
+        <a href="/performer.html">Performer Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>Audience Search</h2>
+        <p>
+          This demo logs your search query so the performer can receive it. Only use with explicit
+          permission from participants.
+        </p>
+        <form id="search-form" class="search-form">
+          <label>
+            Search Wikipedia-style
+            <input id="query" name="query" type="search" placeholder="Try: Aurora Borealis" required />
+          </label>
+          <label>
+            Optional nickname
+            <input id="label" name="label" type="text" placeholder="Seat A / volunteer name" />
+          </label>
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Results</h2>
+        <div id="results" class="results empty">
+          <p>Search results will appear here.</p>
+        </div>
+        <article id="article" class="article"></article>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Powered by the Wikipedia API. Use responsibly and comply with Wikipedia licensing and
+        community guidelines.
+      </p>
+    </footer>
+
+    <script src="/client.js" type="module"></script>
+  </body>
+</html>

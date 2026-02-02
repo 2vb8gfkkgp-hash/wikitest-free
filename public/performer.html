@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wikitest — Performer Dashboard</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <h1>Performer Dashboard</h1>
+        <p class="tagline">Live search feed for the stage performer.</p>
+      </div>
+      <nav>
+        <a href="/">Audience View</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>Live Feed</h2>
+        <p>
+          Keep this screen on your phone, laptop, or Apple Watch browser. New searches appear here
+          immediately.
+        </p>
+        <div class="status" id="connection-status">Connecting…</div>
+      </section>
+
+      <section class="card">
+        <h2>Latest Searches</h2>
+        <ul id="feed" class="feed"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Tip: enable push notifications with the optional ntfy.sh integration in the README.
+      </p>
+    </footer>
+
+    <script src="/performer.js" type="module"></script>
+  </body>
+</html>
