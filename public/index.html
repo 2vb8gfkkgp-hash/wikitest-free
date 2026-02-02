@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wikitest — Session Launcher</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <h1>Wikitest</h1>
+        <p class="tagline">Create a temporary audience link that mirrors Wikipedia.</p>
+      </div>
+      <nav>
+        <a href="/performer.html">Performer Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>Launch a Session</h2>
+        <p>
+          Generate a temporary link that opens a Wikipedia-style mock page. Use it only with
+          explicit consent.
+        </p>
+        <button id="create-session" type="button">Create temporary link</button>
+        <div class="session-output" id="session-output" hidden>
+          <p>Your temporary audience link:</p>
+          <div class="session-link">
+            <input id="session-url" type="text" readonly />
+            <button id="copy-link" type="button">Copy</button>
+          </div>
+          <small>Share this link with the audience participant.</small>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>What happens next?</h2>
+        <ul class="steps">
+          <li>The participant opens the link and sees a Wikipedia-style page.</li>
+          <li>When they search, the performer dashboard updates instantly.</li>
+          <li>Optional notifications can be sent to your phone or laptop.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Powered by the Wikipedia API. Use responsibly and comply with Wikipedia licensing and
+        community guidelines.
+      </p>
+    </footer>
+
+    <script src="/index.js" type="module"></script>
+  </body>
+</html>
